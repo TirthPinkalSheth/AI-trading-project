@@ -2,8 +2,8 @@ import { KiteConnect } from "kiteconnect";
 
 const apiKey = "so5b9vhwbh7t6p4g";
 const apiSecret = "526mdawwi4l62yxlbhrqc3tdt4ai4lun";
-const requestToken = "Q0wJ0ub65oW4jKZ4t50JK9sX5CvGb5hy";
-let accessToken="ZHWOEg2IFCrxqsoC3Tr6yursOqvhADm0";
+const requestToken = "OSE5HhE3kvyKzGkyUKJ5K3tAH9myMmXD";
+let accessToken="CSl4edqOb02Miwn3v5GOWH731m30TJ8P";
 
 const kc = new KiteConnect({ api_key: apiKey });
 console.log(kc.getLoginURL());
@@ -11,8 +11,15 @@ console.log(kc.getLoginURL());
 async function init() {
   try {
     kc.setAccessToken(accessToken);
-    // await generateSession();
-    await getProfile();
+    // await getProfile();
+    await kc.placeOrder("amo",{
+      "exchange": "NSE",
+      "tradingsymbol": "INFY",
+      "transaction_type": "BUY",
+      "quantity": 1,
+      "product": "CNC",
+      "order_type": "MARKET"
+    });
   } catch (err) {
     console.error(err);
   }
@@ -29,20 +36,13 @@ async function init() {
 //   }
 // }
 
-async function getProfile() {
-  try {
-    const profile = await kc.placeOrder("amo",{
-      "exchange": "NSE",
-      "tradingsymbol": "INFY",
-      "transaction_type": "BUY",
-      "quantity": 1,
-      "product": "CNC",
-      "order_type": "MARKET"
-    });
-    console.log("Profile:", profile);
-  } catch (err) {
-    console.error("Error getting profile:", err);
-  }
-}
+// async function getProfile() {
+//   try {
+//     const profile = await kc.getProfile();
+//     console.log("Profile:", profile);
+//   } catch (err) {
+//     console.error("Error getting profile:", err);
+//   }
+// }
 // Initialize the API calls
 init();
