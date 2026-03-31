@@ -5,7 +5,7 @@ const apiKey = "so5b9vhwbh7t6p4g";
 const apiSecret = "526mdawwi4l62yxlbhrqc3tdt4ai4lun";
 const requestToken = "your_request_token";
 const kc = new kiteconnect_1.KiteConnect({ api_key: apiKey });
-console.log(kc.getLoginURL());
+// console.log(kc.getLoginURL());
 async function init() {
     try {
         await generateSession();

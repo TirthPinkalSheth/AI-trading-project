@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "strict": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "skipLibCheck": true,
-    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["**/*"],
   "exclude": ["node_modules", "dist"]
